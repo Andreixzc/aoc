@@ -1,0 +1,6 @@
+# Ignore .vscode folder
+.vscode/
+
+# Ignore all swap files (created by editors like Vim)
+*.swp
+
