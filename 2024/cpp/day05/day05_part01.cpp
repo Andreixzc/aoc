@@ -7,10 +7,11 @@ using namespace std;
 #define endl '\n'
 
 unordered_map<int, vector<int>> adj;
-void addEdge(int u, int v) {
+void addEdge(int u, int v)
+{
     adj[u].push_back(v);
 }
-bool dfs(int origin, int destination, unordered_map<int, vector<int>> &graph)
+bool dfs(int origin, int destination, unordered_map<int, vector<int>>& graph)
 {
     stack<int> s;
     unordered_set<int> visited;
@@ -58,7 +59,8 @@ int main()
         vector<int> numbers;
         stringstream ss(line);
         string number;
-        while (getline(ss, number, ','))numbers.push_back(stoi(number));
+        while (getline(ss, number, ','))
+            numbers.push_back(stoi(number));
 
         unordered_map<int, vector<int>> subgraph;
         unordered_set<int> sequenceSet(numbers.begin(), numbers.end());
@@ -66,7 +68,8 @@ int main()
         {
             for (int neighbor : adj[node])
             {
-                if (sequenceSet.find(neighbor) != sequenceSet.end()) subgraph[node].push_back(neighbor);
+                if (sequenceSet.find(neighbor) != sequenceSet.end())
+                    subgraph[node].push_back(neighbor);
             }
         }
         bool valid = true;
@@ -83,12 +86,11 @@ int main()
             if (!valid)
                 break;
         }
-        if (valid) ans += numbers[numbers.size() / 2];
+        if (valid)
+            ans += numbers[numbers.size() / 2];
     }
 
-    cout <<  ans << endl;
+    cout << ans << endl;
 
     return 0;
 }
-
-

@@ -35,7 +35,8 @@ int main() {
                     i += 3;
                     continue;
                 }
-            } else if (str[i + 1] == 'o' && str[i + 2] == 'n' && i + 6 < str.length()) {
+            }
+            else if (str[i + 1] == 'o' && str[i + 2] == 'n' && i + 6 < str.length()) {
                 if (str[i + 3] == '\'' && str[i + 4] == 't' && str[i + 5] == '(' && str[i + 6] == ')') {
                     dont = true;
                     i += 6;
@@ -43,7 +44,7 @@ int main() {
                 }
             }
         }
-        
+
         if (str[i] == 'm' && i + 3 < str.length()) {
             if (str[i + 1] == 'u' && str[i + 2] == 'l' && str[i + 3] == '(') {
                 int j = i + 4;
@@ -57,7 +58,8 @@ int main() {
                             validExpression = false;
                             break;
                         }
-                    } else {
+                    }
+                    else {
                         validExpression = false;
                         break;
                     }
@@ -66,7 +68,7 @@ int main() {
 
                 if (validExpression && j < str.length() && str[j] == ',') {
                     x = getNumber(xString);
-                    j++; 
+                    j++;
                     while (j < str.length() && str[j] != ')') {
                         if (isdigit(str[j])) {
                             yString += str[j];
@@ -74,7 +76,8 @@ int main() {
                                 validExpression = false;
                                 break;
                             }
-                        } else {
+                        }
+                        else {
                             validExpression = false;
                             break;
                         }
@@ -86,10 +89,12 @@ int main() {
                         if (!dont) {
                             total += x * y;
                         }
-                    } else {
+                    }
+                    else {
                         validExpression = false;
                     }
-                } else {
+                }
+                else {
                     validExpression = false;
                 }
 

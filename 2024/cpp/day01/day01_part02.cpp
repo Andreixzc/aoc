@@ -16,26 +16,26 @@ int main() {
     ifstream myFile("input.txt");
     string line;
     vector<int> list1;
-    map<int,int> freqMap;
-   while (getline(myFile,line)){
-       stringstream ss(line);
-       int num1 = 0;
-       int num2 = 0;
-      ss >> num1 >> num2;
+    map<int, int> freqMap;
+    while (getline(myFile, line)) {
+        stringstream ss(line);
+        int num1 = 0;
+        int num2 = 0;
+        ss >> num1 >> num2;
 
-      list1.push_back(num1);
-      freqMap[num2]++;
+        list1.push_back(num1);
+        freqMap[num2]++;
 
-   } 
-int ans = 0;
-   for (int i = 0; i <= list1.size(); i++){
+    }
+    int ans = 0;
+    for (int i = 0; i <= list1.size(); i++) {
 
-ans += list1[i] * freqMap[list1[i]];
+        ans += list1[i] * freqMap[list1[i]];
 
-   }
-   
-   cout << ans << endl;
-   
+    }
+
+    cout << ans << endl;
+
     return 0;
 }
 

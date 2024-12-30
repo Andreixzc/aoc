@@ -38,7 +38,8 @@ int main() {
                             validExpression = false;
                             break;
                         }
-                    } else {
+                    }
+                    else {
                         validExpression = false;
                         break;
                     }
@@ -47,7 +48,7 @@ int main() {
 
                 if (validExpression && j < str.length() && str[j] == ',') {
                     x = getNumber(xString);
-                    j++; 
+                    j++;
                     while (j < str.length() && str[j] != ')') {
                         if (isdigit(str[j])) {
                             yString += str[j];
@@ -55,7 +56,8 @@ int main() {
                                 validExpression = false;
                                 break;
                             }
-                        } else {
+                        }
+                        else {
                             validExpression = false;
                             break;
                         }
@@ -65,10 +67,12 @@ int main() {
                     if (validExpression && j < str.length() && str[j] == ')') {
                         y = getNumber(yString);
                         total += x * y;
-                    } else {
+                    }
+                    else {
                         validExpression = false;
                     }
-                } else {
+                }
+                else {
                     validExpression = false;
                 }
 

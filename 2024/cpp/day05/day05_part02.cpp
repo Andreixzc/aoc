@@ -11,7 +11,7 @@ bool isValidSequence(const vector<int>& numbers, unordered_map<int, vector<int>>
         int next = numbers[i + 1];
         auto it = adj.find(current);
         if (it == adj.end()) continue;
-        
+
         bool found = false;
         for (int neighbor : it->second) {
             if (neighbor == next) {
@@ -44,13 +44,13 @@ vector<int> getCorrectOrder(vector<int>& numbers, unordered_map<int, vector<int>
             q.push(pair.first);
         }
     }
-    
+
     vector<int> result;
     while (!q.empty()) {
         int current = q.front();
         q.pop();
         result.pb(current);
-        
+
         if (subgraph.find(current) != subgraph.end()) {
             for (int next : subgraph[current]) {
                 inDegree[next]--;
@@ -60,7 +60,7 @@ vector<int> getCorrectOrder(vector<int>& numbers, unordered_map<int, vector<int>
             }
         }
     }
-    
+
     return result;
 }
 
